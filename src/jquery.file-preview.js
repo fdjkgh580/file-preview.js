@@ -22,27 +22,26 @@
 
         var reader = new FileReader();
 
-        // 若有使用 Base64
-        if (param.isBase64 === true) {
-            reader.onload = function (e) {
-                box.base64 = e.target.result;
-                param.success.call(_bind_selector, box)
-            }
-        }
-
         // 讀取進度
         reader.onprogress = function (data){
             if (data.lengthComputable) {                                            
-                var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
-                param.progress.call(_bind_selector, progress);
-
-                console.log("-->" + reader.readyState);
+                var percent = parseInt( ((data.loaded / data.total) * 100), 10 );
+                param.progress.call(_bind_selector, percent);
             }
         }
 
+        // 若有使用 Base64
+        if (param.isBase64 === true) {
+
+            reader.onload = function (e) {
+                box.base64 = e.target.result;
+                param.success.call(_bind_selector, box);
+            }
+
+            // base64 網址
+            reader.readAsDataURL(file);
+        }
         
-        // base64 網址
-        reader.readAsDataURL(file);
     }
 
     // 主檔名 / 副檔名
@@ -60,12 +59,11 @@
 
 
     var _each_files = function (files, param){
-        var box    = {};
 
         $.each(files, function (index, file){
 
             // 預覽圖網址
-            $.extend(box, {
+            var box = {
                 preview: _preview_url(file),
                 file: file,
                 nameMaster: _filename_extension(file.name)[0],
@@ -76,36 +74,37 @@
                     kb: format_float(file.size / 1024, 2),
                     mb: format_float(file.size / 1024 / 1024, 2),
                 }
-            });
+            };
 
             // 使用 Base64
             _reader_base64(file, box, param);
         });
 
 
-        return box;
     }
    
 
     /**
-     * [filePreview description]
      * @param   param.parent
-     * @param   param.child
+     * @param   param.selector
      * @param   param.success
      * @param   param.isBase64      *false
      */
     $.fn.filePreview = function (param){
 
-        _bind_selector = $(param.parent).find(param.child);
+        _bind_selector = $(param.parent).find(param.selector);
 
-        $(param.parent).on("change", param.child, function (){
+        $(param.parent).on("change", param.selector, function (){
 
             if (this.files && this.files[0]) {
 
-                var box = _each_files(this.files, param);
+                _each_files(this.files, param);
             }
 
+            // input:file 重設
+            _bind_selector.val(null);
         })
+
     }
 
 

@@ -3,20 +3,15 @@
 <script>
 $(function (){
 
-    // $("body").on("change", ".upload", function (){
-    //     console.log(this)
-        
-    // });
-
-
     $().filePreview({
         parent: ".form1",
-        child: ".upload",
+        selector: ".upload",
         isBase64: true,
         progress: function (percent){
+            console.log(percent)
         },
         success: function (obj){
-            // console.log(obj)
+            console.log(obj)
         }
     })
 })
