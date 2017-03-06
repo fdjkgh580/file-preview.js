@@ -1,0 +1,14 @@
+.img {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    background-color: #353535;
+    float: left;
+    padding: 0;
+    margin: 10px;
+    border-radius: 3px;
+}
+

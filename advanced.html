@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="jquery-3.1.1.min.js"></script>
+<script src="src/jquery.file-preview.js"></script>
+<script>
+$(function (){
+
+    $().filePreview({
+        parent: ".form1",
+        selector: ".upload",
+        success: function (key, obj){
+
+            console.log(obj);
+            
+            var $img = $(this).parents(".form1").find(".img").eq(key);
+
+            $img.css({
+                'background-image' : 'url(' + obj.preview + ')'
+            });
+
+        }
+    })
+})
+</script>
+
+<form class="form1">
+    <input type="file" name="upload[]" class="upload" multiple>    
+    <div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+</form>

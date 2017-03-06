@@ -18,7 +18,7 @@
         return Math.round(num * size) / size;
     }
 
-    var _reader_base64 = function (file, box, param){
+    var _reader_base64 = function (file, index, box, param){
 
         var reader = new FileReader();
 
@@ -26,22 +26,18 @@
         reader.onprogress = function (data){
             if (data.lengthComputable) {                                            
                 var percent = parseInt( ((data.loaded / data.total) * 100), 10 );
-                param.progress.call(_bind_selector, percent);
+                param.progress.call(_bind_selector, index, percent);
             }
         }
 
         // 若有使用 Base64
-        if (param.isBase64 === true) {
-
-            reader.onload = function (e) {
-                box.base64 = e.target.result;
-                param.success.call(_bind_selector, box);
-            }
-
+        reader.onload = function (e) {
             // base64 網址
-            reader.readAsDataURL(file);
+            box.base64 = e.target.result;
+            param.success.call(_bind_selector, index, box);
         }
-        
+
+        reader.readAsDataURL(file);
     }
 
     // 主檔名 / 副檔名
@@ -76,8 +72,13 @@
                 }
             };
 
-            // 使用 Base64
-            _reader_base64(file, box, param);
+            // 使用 isReader
+            if (param.isReader) {
+                _reader_base64(file, index, box, param);
+            }
+            else {
+                param.success.call(_bind_selector, index, box);
+            }
         });
 
 
@@ -85,10 +86,11 @@
    
 
     /**
-     * @param   param.parent
-     * @param   param.selector
-     * @param   param.success
-     * @param   param.isBase64      *false
+     * @param   param.parent    string
+     * @param   param.selector  string
+     * @param   param.success   function    callback
+     * @param   param.isReader  bool        *false 若開啟, 當讀取大圖時的轉換時間，容易造成瀏覽器記憶體不足
+     *                                      開啟才能觸發 callback progress() 與取得 Base64 編碼
      */
     $.fn.filePreview = function (param){
 

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="style.css">
 <script src="jquery-3.1.1.min.js"></script>
 <script src="src/jquery.file-preview.js"></script>
 <script>
@@ -6,11 +7,7 @@ $(function (){
     $().filePreview({
         parent: ".form1",
         selector: ".upload",
-        isBase64: true,
-        progress: function (percent){
-            console.log(percent)
-        },
-        success: function (obj){
+        success: function (key, obj){
             console.log(obj)
         }
     })
@@ -18,5 +15,5 @@ $(function (){
 </script>
 
 <form class="form1">
-    <input type="file" name="upload[]" class="upload" multiple>    
+    <input type="file" name="upload" class="upload" multiple>    
 </form>
