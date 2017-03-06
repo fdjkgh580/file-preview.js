@@ -1,0 +1,27 @@
+<script src="jquery-3.1.1.min.js"></script>
+<script src="src/jquery.file-preview.js"></script>
+<script>
+$(function (){
+
+    // $("body").on("change", ".upload", function (){
+    //     console.log(this)
+        
+    // });
+
+
+    $().filePreview({
+        parent: ".form1",
+        child: ".upload",
+        isBase64: true,
+        progress: function (percent){
+        },
+        success: function (obj){
+            // console.log(obj)
+        }
+    })
+})
+</script>
+
+<form class="form1">
+    <input type="file" name="upload[]" class="upload" multiple>    
+</form>
