@@ -40,9 +40,17 @@ $().filePreview({
 ````
 <br>
 注意，這會犧牲瀏覽器的記憶體效能，檔案過大則會容易造成記憶體不足。通常這用在上傳圖檔時很適合。<br><br>
-file-preview 參數: <br>
+##file-preview 參數 <br>
 --parent 綁定的父元素<br>
 --selector 綁定的元素<br>
 --isReader 是否啟用 FileReader<br>
 --progress(key, percent) 若啟用 FileReader 可顯示讀取進度<br>
 --success(key, obj) 單一檔案讀取成功所觸發<br>
+<br>
+##Success 可取得的物件<br>
+-- file 檔案原始資訊<br>
+-- nameExtension 附檔名<br>
+-- nameMaster 主檔名<br>
+-- preview 預覽網址<br>
+-- size 檔案大小<br>
+-- type 檔案類型<br>
