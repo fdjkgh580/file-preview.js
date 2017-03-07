@@ -86,3 +86,4 @@ $(".form1").on('change', '.upload', function() {
 - preview 預覽網址
 - size 檔案大小
 - type 檔案類型
+- base64 檔案使用 Base64 編碼
