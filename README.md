@@ -29,7 +29,7 @@ $().filePreview({
 $().filePreview({
     parent: ".form1",
     selector: ".upload",
-    isReader: false,
+    isReader: true,
     progress: function (key, percent){
         console.log(percent)
     },
