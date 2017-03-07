@@ -4,11 +4,8 @@
 <script>
 $(function (){
 
-
     $(".form1").on('change', '.upload', function() {
-
         var _this = this;
-
         $.filePreview.create(this, {
             isReader: false,
             progress: function (key, percent){
@@ -21,7 +18,6 @@ $(function (){
                 });
             }
         });
-
     });
 
 })
