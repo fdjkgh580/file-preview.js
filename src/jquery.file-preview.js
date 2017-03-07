@@ -84,7 +84,7 @@
 
     // 綁定的對象
     var _selector = function (param){
-        
+
         if (param.parent === undefined || param.selector === undefined){
             return $.filePreview;
         }
