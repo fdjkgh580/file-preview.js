@@ -1,0 +1,27 @@
+{
+  "name": "file-preview.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "3.1.1"
+  },
+  "homepage": "https://github.com/fdjkgh580/file-preview.js",
+  "authors": [
+    "fdjkgh580_notbook <fdjkgh580@yahoo.com.tw>"
+  ],
+  "description": "",
+  "main": "src/jquery.file-preview.min.js",
+  "keywords": [
+    "image",
+    "file",
+    "preview",
+    "fileReader"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

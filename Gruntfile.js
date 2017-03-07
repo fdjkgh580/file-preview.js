@@ -13,18 +13,9 @@ module.exports = function(grunt) {
                 sourceMapIncludeSources: true
             },
             my_target: {
-                files: [{
-                    // 啟用擴展
-                    expand: true,
-                    // 來源的路徑
-                    cwd: 'src',
-                    // 將不是 .min.js 的檔案全部進行壓縮
-                    src: ['*.js', '!*.min.js'],
-                    // 輸出的路徑
-                    dest: 'src',
-                    // 額外壓縮成 .min.js 而不會覆蓋
-                    ext: '.min.js'
-                }]
+                files: {
+                    'src/jquery.file-preview.min.js': ['src/jquery.file-preview.js']
+                }
             }
         },
         // 設定監控異動
