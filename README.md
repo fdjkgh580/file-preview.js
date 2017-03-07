@@ -68,14 +68,17 @@ $(".form1").on('change', '.upload', function() {
 ````
 ### $.filePreview.version()
 取得版本
+
 ## 參數
 - parent 綁定的父元素
 - selector 綁定的元素
 - isReader 是否啟用 FileReader
 - progress(key, percent) 若啟用 FileReader 可顯示讀取進度
 - success(key, obj) 單一檔案讀取成功所觸發
+
 ## progress 回傳
 - percent 讀取進度百分比
+
 ## success 回傳
 - file 檔案原始資訊
 - nameExtension 附檔名
@@ -83,3 +86,4 @@ $(".form1").on('change', '.upload', function() {
 - preview 預覽網址
 - size 檔案大小
 - type 檔案類型
+- base64 檔案使用 Base64 編碼
