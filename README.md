@@ -49,7 +49,7 @@ $().filePreview({
 ## API
 ### $.filePreview.create(selector, param)
 可以透過自訂的事件配合，例如
-````
+````javascript
 $(".form1").on('change', '.upload', function() {
     var _this = this;
     $.filePreview.create(this, {
