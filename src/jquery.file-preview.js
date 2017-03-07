@@ -98,7 +98,7 @@
 
     /**
      * 建立
-     * @param  {} selector 通常為 input:file 的 this
+     * @param   selector 通常為 input:file 的 this
      * @param   param.success   function    callback(object) 單筆成功所觸發
      * @param   param.isReader  bool        *false 若開啟, 當讀取大圖時的轉換時間，容易造成瀏覽器記憶體不足
      *                                      開啟才能觸發 callback progress() 與取得 Base64 編碼
