@@ -10,14 +10,12 @@ bower install file-preview.js
 <script src="jquery-3.1.1.min.js"></script>
 <script src="src/jquery.file-preview.js"></script>
 ````
-<br>
 接著通常有類似這樣的結構
 ````html
 <form class="form1">
     <input type="file" name="upload[]" class="upload" multiple>    
 </form>
 ````
-<br>
 如果只是顯示預覽圖片，jQuery 的部分可以這麼寫
 ````javascript
 $().filePreview({
@@ -28,7 +26,6 @@ $().filePreview({
     }
 })
 ````
-<br>
 可以透過 FileReader() 取得圖片或檔案的 Base64 編碼，例如您打算使用 Base64 為圖片編碼後上傳到伺服器，可以這麼用
 ````javascript
 $().filePreview({
@@ -43,8 +40,7 @@ $().filePreview({
     }
 })
 ````
-<br>
-在 success 的時候可以在 obj.base64 取得編碼。但注意，這會犧牲瀏覽器的記憶體效能，檔案過大則會容易造成記憶體不足。通常這用在上傳圖檔時很適合。<br><br>
+在 success 的時候可以在 obj.base64 取得編碼。但注意，這會犧牲瀏覽器的記憶體效能，檔案過大則會容易造成記憶體不足。通常這用在上傳圖檔時很適合。<br>
 
 ## API
 ### $.filePreview.create(selector, param)
