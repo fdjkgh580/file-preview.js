@@ -8,7 +8,7 @@ npm i file-preview.js
 在你的 HTML 中添加 jQuery, file-preview.js
 ````html
 <script src="jquery-3.1.1.min.js"></script>
-<script src="src/jquery.file-preview.js"></script>
+<script src="dist/jquery.file-preview.js"></script>
 ````
 接著通常有類似這樣的結構
 ````html

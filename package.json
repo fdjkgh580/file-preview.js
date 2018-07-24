@@ -1,6 +1,6 @@
 {
   "name": "file-preview.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "簡單、快速取得使用者選取的多個圖檔資訊，適合用在預覽圖、檔案 Base64 編碼。",
   "main": "dist/jquery.file-preview.min.js",
   "scripts": {
