@@ -1,10 +1,34 @@
 {
-    "name": "file-preview.js",
-    "version": "1.0.0",
-    "description": "",
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-uglify": "~0.10.0",
-        "grunt-contrib-watch": "~0.4.0"
-    }
+  "name": "file-preview.js",
+  "version": "1.0.1",
+  "description": "簡單、快速取得使用者選取的多個圖檔資訊，適合用在預覽圖、檔案 Base64 編碼。",
+  "main": "dist/jquery.file-preview.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "preview",
+    "image",
+    "photo",
+    "file",
+    "base64"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "file-loader": "^1.1.11",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^2.1.3",
+    "webpack-glob-folder-entries": "^1.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }

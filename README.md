@@ -1,8 +1,8 @@
 # file-preview.js
 簡單、快速取得使用者選取的多個圖檔資訊，適合用在預覽圖、檔案 Base64 編碼。
-## 透過 Bower 安裝
+## 透過 NPM 安裝
 ````
-bower install file-preview.js
+npm i file-preview.js
 ````
 ## 簡單用法
 在你的 HTML 中添加 jQuery, file-preview.js

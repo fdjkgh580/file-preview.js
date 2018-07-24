@@ -2,7 +2,7 @@
 
     $.filePreview = {};
 
-    var _version = "1.0.0";
+    var _version = "1.0.1";
 
 
     // 記錄綁定對象
